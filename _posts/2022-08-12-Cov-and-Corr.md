@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Covariance and correlation
-date: 2022-08-10 11:12:00-0400
+date: 2022-08-12 11:12:00-0400
 comments: true
 description: 
 tags: math covariance correlation
