@@ -61,13 +61,15 @@ $$
 Mean-centered (each column has zero expectation):
 
 $$
+\begin{align}
 \overline x=\frac{1}{p}\sum_{i=1}^p \vec x_{i} = [E(gene_1),E(gene_2),...E(gene_n)]
-\\\\
+\\
 \widetilde X=[\vec x_1-\overline x,\vec x_2-\overline x,...\vec x_p-\overline x]'=[gene_1-E(gene_1),gene_2-E(gene_2),....gene_n-E(gene_n)]
-\\\\
+\\
 \overline y=\frac{1}{q}\sum_{i=1}^q \vec y_{i}= [E(gene_1),E(gene_2),...E(gene_m)]
-\\\\
+\\
 \widetilde Y=[\vec y_1-\overline y,\vec y_2-\overline y,...\vec y_q-\overline y]'=[gene_1-E(gene_1),gene_2-E(gene_2),....gene_m-E(gene_m)]
+\end{align}
 $$
 
 Covariance matrix is the matrix whose $(i,j)$ entry is the covariance between the variables $gene_i, gene_j$:
@@ -203,5 +205,5 @@ $$
 
 This blog heavily referenced the Course of Youtuber molypath. 
 
-[https://www.youtube.com/watch?v=QptKkD__k-c]
+https://www.youtube.com/watch?v=QptKkD__k-c
 
