@@ -61,7 +61,7 @@ $$
 Mean-centered (each column has zero expectation):
 
 $$
-\begin{align}\label{1}
+\begin{align*}\label{1}
 \overline x &=\frac{1}{p}\sum_{i=1}^p \vec x_{i} = [E(gene_1),E(gene_2),...E(gene_n)]
 \\
 \widetilde X &=[\vec x_1-\overline x,\vec x_2-\overline x,...\vec x_p-\overline x]'=[gene_1-E(gene_1),gene_2-E(gene_2),....gene_n-E(gene_n)]
@@ -69,17 +69,17 @@ $$
 \overline y &=\frac{1}{q}\sum_{i=1}^q \vec y_{i}= [E(gene_1),E(gene_2),...E(gene_m)]
 \\
 \widetilde Y &=[\vec y_1-\overline y,\vec y_2-\overline y,...\vec y_q-\overline y]'=[gene_1-E(gene_1),gene_2-E(gene_2),....gene_m-E(gene_m)]
-\end{align}
+\end{align*}
 $$
 
 Covariance matrix is the matrix whose $(i,j)$ entry is the covariance between the variables $gene_i, gene_j$:
 
 $$
-\begin{align}\label{2}
+\begin{align*}\label{2}
 Var(\vec X)_{i,j} &= Cov(gene_i, gene_j)=>Var(\vec X)= Cov(\vec X,\vec X)=\frac{1}{p-1}\widetilde X^T\widetilde X
 \\
 Var(\vec Y)_{i,j} &=Cov(gene_i, gene_j)=>Var(\vec Y)=Cov(\vec Y,\vec Y) = \frac{1}{q-1}\widetilde Y^T\widetilde Y
-\end{align}
+\end{align*}
 $$
 
 If we denote the variable vector as $$\vec X=[gene_1,gene_2,...gene_n]'$$ (sometime also called random vectors), the covariance matrix of dataset $$X$$ can also be considered as covariance matrix of the random vector $$\vec X$$ , which is typically denoted by $$K_{XX}$$ or $$\Sigma_{XX}$$ . 
@@ -176,32 +176,34 @@ Correlation matrix contain correlations between variables in our data, which mea
 Standardized matrix: 
 
 $$
-\begin{align}\label{5}
+\begin{align*}\label{5}
 \sigma(gene_i) &=\sqrt{Var(gene_i)}
 \\
 X_s &=[\frac{gene_1-E(gene_1)}{\sigma(gene_1)},\frac{gene_2-E(gene_2)}{\sigma(gene_2)},....\frac{gene_n-E(gene_n)}{\sigma(gene_n)}]
 \\
 Y_s &=[\frac{gene_1-E(gene_1)}{\sigma(gene_1)},\frac{gene_2-E(gene_2)}{\sigma(gene_2)},....\frac{gene_n-E(gene_m)}{\sigma(gene_m)}]
-\end{align}
+\end{align*}
 $$
 
 Correlation matrix: 
 
 $$
-\begin{align}\label{6}
+\begin{align*}\label{6}
 &Corr(\vec X)_{ij}=Cor(gene_i,gene_j)->Corr(\vec X)=\frac{1}{p-1}X_s^TX_s
 \\
 &Corr(\vec Y)_{ij}=Cor(gene_i,gene_j)->Corr(\vec Y)=\frac{1}{q-1}Y_s^TY_s
-\end{align}
+\end{align*}
 $$
 
 
 Similarly, we also have **Cross-correlation**. Similarly we need to subset the dataset to make them have same observations/cells $$r$$. 
 
 $$
-Corr(\vec X,\vec Y)_{ij}=Cor(gene_i,gene_j)-> Corr(\vec X,\vec Y)=\frac{1}{r-1}X^T_sY_s
+\begin{align*}\label{7}
+Corr(\vec X,\vec Y)_{ij} &=Cor(gene_i,gene_j)-> Corr(\vec X,\vec Y)=\frac{1}{r-1}X^T_sY_s
 \\
-Corr(\vec Y,\vec X)_{ij}=Cor(gene_i,gene_j)-> Corr(\vec Y,\vec X)=\frac{1}{r-1}Y^T_sX_s
+Corr(\vec Y,\vec X)_{ij} &=Cor(gene_i,gene_j)-> Corr(\vec Y,\vec X)=\frac{1}{r-1}Y^T_sX_s
+\end{align*}
 $$
 
   
