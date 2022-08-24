@@ -62,36 +62,38 @@ Mean-centered (each column has zero expectation):
 
 $$
 \begin{align}
-\overline x=\frac{1}{p}\sum_{i=1}^p \vec x_{i} = [E(gene_1),E(gene_2),...E(gene_n)]
+\overline x=\frac{1}{p}\sum_{i=1}^p \vec x_{i} &= [E(gene_1),E(gene_2),...E(gene_n)]
 \\
-\widetilde X=[\vec x_1-\overline x,\vec x_2-\overline x,...\vec x_p-\overline x]'=[gene_1-E(gene_1),gene_2-E(gene_2),....gene_n-E(gene_n)]
+\widetilde X &=[\vec x_1-\overline x,\vec x_2-\overline x,...\vec x_p-\overline x]'=[gene_1-E(gene_1),gene_2-E(gene_2),....gene_n-E(gene_n)]
 \\
-\overline y=\frac{1}{q}\sum_{i=1}^q \vec y_{i}= [E(gene_1),E(gene_2),...E(gene_m)]
+\overline y &=\frac{1}{q}\sum_{i=1}^q \vec y_{i}= [E(gene_1),E(gene_2),...E(gene_m)]
 \\
-\widetilde Y=[\vec y_1-\overline y,\vec y_2-\overline y,...\vec y_q-\overline y]'=[gene_1-E(gene_1),gene_2-E(gene_2),....gene_m-E(gene_m)]
+\widetilde Y &=[\vec y_1-\overline y,\vec y_2-\overline y,...\vec y_q-\overline y]'=[gene_1-E(gene_1),gene_2-E(gene_2),....gene_m-E(gene_m)]
 \end{align}
 $$
 
 Covariance matrix is the matrix whose $(i,j)$ entry is the covariance between the variables $gene_i, gene_j$:
 
 $$
-Var(\vec X)_{i,j} = Cov(gene_i, gene_j)=>Var(\vec X)= Cov(\vec X,\vec X)=\frac{1}{p-1}\widetilde X^T\widetilde X
+\begin{align}
+Var(\vec X)_{i,j} &= Cov(gene_i, gene_j)=>Var(\vec X)= Cov(\vec X,\vec X)=\frac{1}{p-1}\widetilde X^T\widetilde X
 \\
-Var(\vec Y)_{i,j}=Cov(gene_i, gene_j)=>Var(\vec Y)=Cov(\vec Y,\vec Y) = \frac{1}{q-1}\widetilde Y^T\widetilde Y
+Var(\vec Y)_{i,j} &=Cov(gene_i, gene_j)=>Var(\vec Y)=Cov(\vec Y,\vec Y) = \frac{1}{q-1}\widetilde Y^T\widetilde Y
+\end{align}
 $$
 
 If we denote the variable vector as $$\vec X=[gene_1,gene_2,...gene_n]'$$ (sometime also called random vectors), the covariance matrix of dataset $$X$$ can also be considered as covariance matrix of the random vector $$\vec X$$ , which is typically denoted by $$K_{XX}$$ or $$\Sigma_{XX}$$ . 
 
 
-==Characteristics of Covariance matrix $$A=Var(\vec X)$$ :==
+***Characteristics of Covariance matrix $$A=Var(\vec X)$$ ***
 
 1. $$n \times n$$ Square symmetric -> $$A = A^T$$
 
-2. $$Var(\vec X)_{ii}=Cov(gene_i,gene_i)=Var(gene_i)$$
+2. $$Var(\vec X)_{ii}=Cov(gene_i,gene_i)=Var(gene_i)$$. 
 
 3. Positive semi-definite -> For every non-zero vector $$\vec z$$,  $$z'Az≥0$$  
 
-4. If $$gene_1,gene_2,....gene_n$$ are all independent, $$Var(\vec X)=diag(Var(gene_1),Var(gene_2),...Var(gene_n))$$
+4. If $$gene_1,gene_2,....gene_n$$ are all independent,$$Var(\vec X)=diag(Var(gene_1),Var(gene_2),...Var(gene_n))$$
 
    
 
@@ -105,15 +107,15 @@ Cross-covariance can measure how dependent two variable set of two datasets are,
 
 
 
-==Characteristics of Cross-coariance matrix $$A=Cov(\vec X, \vec Y), B=Cov(\vec Y,\vec X)^T$$:==
+***Characteristics of Cross-coariance matrix $$A=Cov(\vec X, \vec Y), B=Cov(\vec Y,\vec X)^T$$***
 
 1. $$n \times m$$ matrix, in general not symmetric
-2. $$A= B^T$$
-3. $$Cov(\vec X_1+\vec X_2,\vec Y)=Cov(\vec X_1,\vec Y)+Cov(\vec X_2,\vec Y)$$
+2. $$A= B^T$$.
+3. $$Cov(\vec X_1+\vec X_2,\vec Y)=Cov(\vec X_1,\vec Y)+Cov(\vec X_2,\vec Y)$$. 
 4. If $$a$$ is a constant, $$Cov(a\vec X,\vec Y)=Cov(\vec X,a\vec Y)=aA$$ ; $$Cov(a+\vec X,\vec Y)=Cov(\vec X,a +\vec Y)=A$$ (Linear recombination is discussed below)
 5. If $$n=m$$, $$Var(\vec X+\vec Y)=Var(\vec X)+Var(\vec Y)+A+B$$
 
-
+//
 
 ### Covariance of linear recombinations
 
@@ -175,19 +177,23 @@ Correlation matrix contain correlations between variables in our data, which mea
 Standardized matrix: 
 
 $$
+\begin{align}
 \sigma(gene_i)=\sqrt{Var(gene_i)}
 \\
-X_s=[\frac{gene_1-E(gene_1)}{\sigma(gene_1)},\frac{gene_2-E(gene_2)}{\sigma(gene_2)},....\frac{gene_n-E(gene_n)}{\sigma(gene_n)}]
+X_s &=[\frac{gene_1-E(gene_1)}{\sigma(gene_1)},\frac{gene_2-E(gene_2)}{\sigma(gene_2)},....\frac{gene_n-E(gene_n)}{\sigma(gene_n)}]
 \\
-Y_s=[\frac{gene_1-E(gene_1)}{\sigma(gene_1)},\frac{gene_2-E(gene_2)}{\sigma(gene_2)},....\frac{gene_n-E(gene_m)}{\sigma(gene_m)}]
+Y_s &=[\frac{gene_1-E(gene_1)}{\sigma(gene_1)},\frac{gene_2-E(gene_2)}{\sigma(gene_2)},....\frac{gene_n-E(gene_m)}{\sigma(gene_m)}]
+\end{align}
 $$
 
 Correlation matrix: 
 
 $$
-Corr(\vec X)_{ij}=Cor(gene_i,gene_j)->Corr(\vec X)=\frac{1}{p-1}X_s^TX_s
+\begin{align}
+&Corr(\vec X)_{ij}=Cor(gene_i,gene_j)->Corr(\vec X)=\frac{1}{p-1}X_s^TX_s
 \\
-Corr(\vec Y)_{ij}=Cor(gene_i,gene_j)->Corr(\vec Y)=\frac{1}{q-1}Y_s^TY_s
+&Corr(\vec Y)_{ij}=Cor(gene_i,gene_j)->Corr(\vec Y)=\frac{1}{q-1}Y_s^TY_s
+\end{align}
 $$
 
 
@@ -200,10 +206,11 @@ Corr(\vec X,\vec Y)_{ij}=Cor(gene_i,gene_j)-> Corr(\vec X,\vec Y)=\frac{1}{r-1}X
 Corr(\vec Y,\vec X)_{ij}=Cor(gene_i,gene_j)-> Corr(\vec Y,\vec X)=\frac{1}{r-1}Y^T_sX_s
 $$
 
+//
 
 ### Reference 
 
 This blog heavily referenced the Course of Youtuber molypath. 
 
 https://www.youtube.com/watch?v=QptKkD__k-c
-1111
+
