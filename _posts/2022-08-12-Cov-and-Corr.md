@@ -85,7 +85,7 @@ $$
 If we denote the variable vector as $$\vec X=[gene_1,gene_2,...gene_n]'$$ (sometime also called random vectors), the covariance matrix of dataset $$X$$ can also be considered as covariance matrix of the random vector $$\vec X$$ , which is typically denoted by $$K_{XX}$$ or $$\Sigma_{XX}$$ . 
 
   
-***Characteristics of Covariance matrix $$A=Var(\vec X)$$ ***
+***Characteristics of Covariance matrix $$A=Var(\vec X)$$:***
 
 1. $$n \times n$$ Square symmetric -> $$A = A^T$$
 
@@ -107,7 +107,7 @@ Cross-covariance can measure how dependent two variable set of two datasets are,
 
   
 
-***Characteristics of Cross-coariance matrix $$A=Cov(\vec X, \vec Y), B=Cov(\vec Y,\vec X)^T$$***
+***Characteristics of Cross-coariance matrix $$A=Cov(\vec X, \vec Y), B=Cov(\vec Y,\vec X)^T$$:***
 
 1. $$n \times m$$ matrix, in general not symmetric
 2. $$A= B^T$$.
@@ -212,5 +212,5 @@ $$
 
 This blog heavily referenced the Course of Youtuber molypath. 
 
-https://www.youtube.com/watch?v=QptKkD__k-c
+<https://www.youtube.com/watch?v=QptKkD__k-c>
 
