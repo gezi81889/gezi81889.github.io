@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mathematical summary of CCA
+title: Covariance and correlation
 date: 2022-08-10 11:12:00-0400
 comments: true
 description: 
